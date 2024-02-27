@@ -13,7 +13,9 @@ function game() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.addEventListener('mouseenter', () => {
-            square.style.background = "white";
+            square.style.background = random_bg_color();
+            console.log(square.style.background);
+            
 
         });
     });
@@ -32,7 +34,10 @@ function createGrid(numberOfSquare = 16) {
 }
 function changeGrid(){
     removeGrid();
-    let userGridsSize = prompt("Grid size");
+    let userGridsSize = 101;
+    while (userGridsSize > 100){
+        userGridsSize = prompt("Choose a grid size under 100 squares")
+    }
     createGrid(userGridsSize);
 }
 function removeGrid(){
@@ -41,3 +46,12 @@ function removeGrid(){
         square.remove()
     }); 
 }
+function random_bg_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    return bgColor
+}
+
+
