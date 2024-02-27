@@ -2,6 +2,7 @@
     background-color: aqua;
     display: flex;
     flex-wrap: wrap;
+    width: 960px;
  }
 
  .square {
