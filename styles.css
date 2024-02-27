@@ -1,0 +1,10 @@
+ #container {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .square {
+    background: #c14242;
+    aspect-ratio:1/1;
+}
