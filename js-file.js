@@ -10,15 +10,7 @@ btn.addEventListener('click',changeGrid)
 
 
 function game() {
-    const squares = document.querySelectorAll('.square');
-    squares.forEach((square) => {
-        square.addEventListener('mouseenter', () => {
-            square.style.background = random_bg_color();
-            console.log(square.style.background);
-            
-
-        });
-    });
+    gameBrightnessMode();
 }
 function createGrid(numberOfSquare = 16) {
     const container = document.querySelector('#container');
@@ -54,4 +46,36 @@ function random_bg_color() {
     return bgColor
 }
 
+function gameRandomColor() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseenter', () => {
+            square.style.background = random_bg_color();
+            console.log(square.style.background);
+            
+
+        });
+    });
+}
+function gameNormalMode(){
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseenter', () => {
+            square.style.background = "black"
+        });
+     });
+}
+
+function gameBrightnessMode(){
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        let constrastValue = 0.1;
+        square.addEventListener('mouseenter', () => {
+            square.style.background = "black";
+            let contrastText = "contrast("+ constrastValue +")";
+            square.style.filter = contrastText;
+            constrastValue += 0.1;
+        });
+     });
+}
 
